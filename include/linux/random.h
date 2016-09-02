@@ -9,14 +9,11 @@
 #include <linux/list.h>
 #include <uapi/linux/random.h>
 
-<<<<<<< HEAD
-=======
 struct random_ready_callback {
 	struct list_head list;
 	void (*func)(struct random_ready_callback *rdy);
 	struct module *owner;
 };
->>>>>>> 806bbd3... random: Backport from linux-4.2
 
 extern void add_device_randomness(const void *, unsigned int);
 extern void add_input_randomness(unsigned int type, unsigned int code,
