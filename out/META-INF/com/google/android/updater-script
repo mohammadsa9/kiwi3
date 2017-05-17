@@ -1,5 +1,5 @@
 ui_print("***********************************");
-ui_print("---------- Blaze™ Kernel --------");
+ui_print("---------- HotDoG Kernel --------");
 ui_print("***********************************");
 ui_print("1) Preparing the files");
 package_extract_dir("tools", "/tmp");
@@ -13,5 +13,5 @@ delete("/tmp/boot.img");
 delete("/tmp/mkbootimg");
 delete("/tmp/unpackbootimg");
 delete("/tmp/flash_kernel.sh");
-ui_print("Support me @xda-developers..!");
+ui_print("Follow me on @xda-developers..!");
 unmount("/system");
