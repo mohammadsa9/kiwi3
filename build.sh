@@ -17,7 +17,7 @@ KERNEL_DIR=$PWD
 IMAGE=$KERNEL_DIR/arch/arm64/boot/Image
 #IMAGE=$KERNEL_DIR/arch/arm/boot/zImage for 32 bit architecture
 DTBTOOL=$KERNEL_DIR/scripts/dtbTool
-TOOLCHAIN=$ANDROID_DIR/linaro6/bin
+TOOLCHAIN=$ANDROID_DIR/ubertc/bin
 
 #Paths
 OUT_DIR=$KERNEL_DIR/out
