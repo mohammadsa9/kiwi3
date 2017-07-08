@@ -231,7 +231,7 @@ u64 now_idle;
 unsigned int delta_idle;
 unsigned int delta_time;
 u64 active_time;
-//now_idle = get_cpu_idle_time(cpu, &now, 0);
+now_idle = get_cpu_idle_time(cpu, &now, 0);
 delta_idle = (unsigned int)(now_idle - pcpu->time_in_idle);
 delta_time = (unsigned int)(now - pcpu->time_in_idle_timestamp);
 if (delta_time <= delta_idle)
