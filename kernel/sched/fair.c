@@ -3167,13 +3167,13 @@ place_entity(struct cfs_rq *cfs_rq, struct sched_entity *se, int initial)
 		 * Halve their sleep time's effect, to allow
 		 * for a gentler effect of sleepers:
 		 */
-/*
+
 		if (Lgentle_fair_sleepers)
 			thresh >>= 1;
 
-		vruntime -= thresh;
+		//vruntime -= thresh;
 	}
-*/
+
 
 	/* ensure we never gain time by being placed backwards. */
 	se->vruntime = max_vruntime(se->vruntime, vruntime);
