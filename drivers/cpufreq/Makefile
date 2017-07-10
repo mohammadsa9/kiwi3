@@ -37,7 +37,8 @@ obj-$(CONFIG_CPU_FREQ_GOV_INTELLIMM)	+= cpufreq_intellimm.o
 obj-$(CONFIG_CPU_FREQ_GOV_BLUACTIVE)	+= cpufreq_bluactive.o
 obj-$(CONFIG_CPU_FREQ_GOV_WAVE)		+= cpufreq_wave.o
 obj-$(CONFIG_CPU_FREQ_GOV_IMPULSE)	+= cpufreq_impulse.o 
-obj-$(CONFIG_CPU_FREQ_GOV_COMMON)		+= cpufreq_governor.o
+obj-$(CONFIG_CPU_FREQ_GOV_COMMON)	+= cpufreq_governor.o
+obj-$(CONFIG_FINGERPRINT_BOOST)		+= fp-boost.o 
 obj-$(CONFIG_CPU_BOOST)			+= cpu-boost.o
 
 obj-$(CONFIG_GENERIC_CPUFREQ_CPU0)	+= cpufreq-cpu0.o
