@@ -2802,7 +2802,7 @@ static ssize_t blink_store(struct device *dev,
 		led->rgb_cfg->pwm_cfg->lut_params.lut_pause_lo = convert_pause_lo_store(LED_CUSTOM_PAUSE_LO);
 		led->rgb_cfg->pwm_cfg->pwm_period_us = convert_pwm_us(LED_CUSTOM_PWM_US);
 		led->rgb_cfg->pwm_cfg->lut_params.ramp_step_ms = convert_ramp_ms_store(LED_CUSTOM_RAMP_STEP);
-		qpnp_pwm_init(led->rgb_cfg->pwm_cfg, led->pdev, led->cdev.name);
+		qpnp_pwm_init(led->rgb_cfg->pwm_cfg, led->spmi_dev, led->cdev.name);
 	}
 
 
