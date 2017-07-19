@@ -454,7 +454,9 @@ static ssize_t show_##file_name				\
 }
 /* HACK: Prevent big cluster turned off when changing governor settings. */
 #ifdef CONFIG_CPU_FREQ_MSM
-extern bool prevent_big_off;
+// bool prevent_big_off;
+bool prevent_big_off = false;
+EXPORT_SYMBOL(prevent_big_off);
 
 static void prevent_big_off_cancel(struct work_struct *prevent_big_off_cancel_work)
 {
