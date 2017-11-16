@@ -25,28 +25,28 @@ OUT_ZIP=$KERNEL_DIR/Releases
 NEW_OUT=$OUT_DIR/tools
 
 # Kernel Version Info
-BASE="-HotDoG™"
-CUR_VER="-5.6"
-HD_VER="$BASE$CUR_VER"
+BASE="-Astral"
+CUR_VER="-4.2"
+AK_VER="$BASE$CUR_VER"
  
 
 # Variables
 
-DEFCONFIG="hd_defconfig"
-export LOCALVERSION=~`echo $HD_VER`
+DEFCONFIG="ak_defconfig"
+export LOCALVERSION=~`echo $AK_VER`
 export CROSS_COMPILE=$TOOLCHAIN/aarch64-linux-android-
 export ARCH=arm64
-export KBUILD_BUILD_USER="mohammadsa9"
-export KBUILD_BUILD_HOST="kiwi"
+export KBUILD_BUILD_USER="Matt"
+export KBUILD_BUILD_HOST="TheOTO"
 
-function make_hd {
+function make_ak {
 		echo -e "$green*******************************************************"
-		echo "                  Compiling $HD_VER	              "
+		echo "                  Compiling $AK_VER	              "
 		echo -e "*****************************************************"
 		echo
 		make $DEFCONFIG
 		make menuconfig
-		make -j9
+		make -j1
 		rm -rf $NEWOUT/Image
 		cp -vr $IMAGE $NEW_OUT
 		make_dtb
@@ -62,14 +62,14 @@ function make_clean {
 		echo "          Cleaning up object files and other stuff	              "
 		echo -e "***********************************************$default"
 		make mrproper
-		make_hd
+		make_ak
 	}
 		
 function make_recompile {
 			echo -e "$cyan*******************************************************"
-			echo "             Recompiling $HD_VER	              "
+			echo "             Recompiling $AK_VER	              "
 			echo -e "*****************************************************"
-			make -j8
+			make -j2
 			rm -rf $NEWOUT/Image
 			cp -vr $IMAGE $NEW_OUT
 			make_dtb
@@ -91,8 +91,8 @@ function make_zip {
 		echo -e "*****************************************************"
 		cd $OUT_DIR
 		rm -f '*.zip'
-		zip -yr HDKernel`echo $CUR_VER`.zip *
-		mv HDKernel`echo $CUR_VER`.zip $OUT_ZIP
+		zip -yr Astral-Kernel`echo $CUR_VER`.zip *
+		mv Astral-Kernel`echo $CUR_VER`.zip $OUT_ZIP
 		echo "       Find your zip in Releases directory"
 		echo -e "$default"
 		cd $KERNEL_DIR 
@@ -112,7 +112,7 @@ while read -p " 'Y' to Compile all , 'R' to clean and recompile , 'C' to to do a
 do
 case "$choice" in
 	y|Y)
-		make_hd
+		make_ak
 		break
 		;;
 	r|R )
